@@ -1,10 +1,10 @@
 timeout: 1200s
 substitutions:
   _CUSTOM_REGION: europe-west3
-  _CUSTOM_CLUSTER: gke-cluster
+  _CUSTOM_CLUSTER: cluster-1
 steps:
-  # Configure a kubectl workspace for this project
   - name: gcr.io/cloud-builders/kubectl
+    id: Configure kubectl
     args:
       - cluster-info
     env:
@@ -12,15 +12,13 @@ steps:
       - CLOUDSDK_CONTAINER_CLUSTER=$_CUSTOM_CLUSTER
       - KUBECONFIG=/workspace/.kube/config
 
-  # Deploy with Helm
   - name: gcr.io/$PROJECT_ID/helm
+    id: Deploy chart
     args:
       - upgrade
       - -i
       - go-nihao
       - ./go-nihao-chart
-      - --set
-      - image.repository=gcr.io/$PROJECT_ID/go-nihao,image.tag=$COMMIT_SHA
       - -f
       - ./kubernetes/values.yaml
     env:
