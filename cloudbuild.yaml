@@ -21,10 +21,10 @@ steps:
       - -i
       - go-nihao
       - ./go-nihao-chart
-      - --set
-      - image.repository=$_IMAGE_REPO, image.tag=$_IMAGE_TAG
       - -f
       - ./go-nihao-chart/values.yaml
+      - --set
+      - image.repository=$_IMAGE_REPO, image.tag=$_IMAGE_TAG
     env:
       - KUBECONFIG=/workspace/.kube/config
       - TILLERLESS=true
