@@ -20,7 +20,7 @@ steps:
       - go-nihao
       - ./go-nihao-chart
       - --set
-      - image.repository=gcr.io/$PROJECT_ID/go-nihao
+      - image.repository=gcr.io/$PROJECT_ID/go-nihao, image.tag=5455ae4c04cbdf0c8c994296634eafd2bc227a5c
       - -f
       - ./go-nihao-chart/values.yaml
     env:
