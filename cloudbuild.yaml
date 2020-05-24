@@ -19,6 +19,8 @@ steps:
       - -i
       - go-nihao
       - ./go-nihao-chart
+      - --set
+      - image.repository=gcr.io/$PROJECT_ID/go-nihao
       - -f
       - ./go-nihao-chart/values.yaml
     env:
