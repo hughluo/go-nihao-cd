@@ -2,7 +2,6 @@ timeout: 1200s
 substitutions:
   _CUSTOM_REGION: europe-west3-a
   _CUSTOM_CLUSTER: cluster-1
-  _IMAGE_REPO: gcr.io/$PROJECT_ID/go-nihao
   _IMAGE_TAG: 0a23640bc9cf1880f63ece249884e68034e312af
 steps:
   - name: gcr.io/cloud-builders/kubectl
@@ -24,7 +23,7 @@ steps:
       - -f
       - ./go-nihao-chart/values.yaml
       - --set
-      - image.repository=$_IMAGE_REPO,image.tag=$_IMAGE_TAG
+      - image.repository=gcr.io/$PROJECT_ID/go-nihao,image.tag=$_IMAGE_TAG
     env:
       - KUBECONFIG=/workspace/.kube/config
       - TILLERLESS=true
