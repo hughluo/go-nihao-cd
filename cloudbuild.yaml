@@ -20,7 +20,7 @@ steps:
       - go-nihao
       - ./go-nihao-chart
       - -f
-      - ./kubernetes/values.yaml
+      - ./go-nihao-chart/values.yaml
     env:
       - KUBECONFIG=/workspace/.kube/config
       - TILLERLESS=true
