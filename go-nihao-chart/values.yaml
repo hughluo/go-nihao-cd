@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: "gcr.io/$$PROJECT_ID/go-nihao/go-nihao"
+  repository: 
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "5455ae4c04cbdf0c8c994296634eafd2bc227a5c"
