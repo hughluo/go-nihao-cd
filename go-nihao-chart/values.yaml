@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository:
+  repository: gcr.io/smart-mark-251313/go-nihao
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag:
+  tag: 0a23640bc9cf1880f63ece249884e68034e312af
 
 imagePullSecrets: []
 nameOverride: ""
